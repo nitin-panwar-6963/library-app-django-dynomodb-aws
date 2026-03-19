@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="glass-card p-5 w-100" style="max-width: 420px;">
+    <h2 class="text-center mb-4">🔐 Login</h2>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label>Email</label>
+            {{ form.email }}
+        </div>
+
+        <div class="mb-3">
+            <label>Password</label>
+            {{ form.password }}
+        </div>
+
+        <button class="btn btn-success w-100">Login</button>
+    </form>
+
+    <p class="text-center mt-3">
+        New user? <a href="/" class="text-info">Register</a>
+    </p>
+</div>
+
+{% endblock %}
